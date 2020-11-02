@@ -20,9 +20,9 @@ public class Solution0125 {
         int start = 0, end = s.length() - 1;
         s = s.toLowerCase();
         while (start < end) {
-            if (! checkValid(s.charAt(start))){
+            if (! Character.isLetterOrDigit(s.charAt(start))){
                 start ++;
-            } else if (! checkValid(s.charAt(end))) {
+            } else if (! Character.isLetterOrDigit(s.charAt(end))) {
                 end --;
             } else {
                 if (s.charAt(start ++) != s.charAt(end --)){
@@ -31,9 +31,5 @@ public class Solution0125 {
             }
         }
         return true;
-    }
-
-    private boolean checkValid(char c) {
-        return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z');
     }
 }
