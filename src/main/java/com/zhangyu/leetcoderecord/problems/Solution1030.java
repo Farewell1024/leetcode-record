@@ -15,9 +15,9 @@ public class Solution1030 {
 
     public static void main(String[] args) {
         Solution1030 solution = new Solution1030();
-        System.out.println(Arrays.stream(solution.allCellsDistOrder(1, 2, 0, 0)).map(Arrays::toString).collect(Collectors.joining(", ")));
-        System.out.println(Arrays.stream(solution.allCellsDistOrder(2, 2, 0, 1)).map(Arrays::toString).collect(Collectors.joining(", ")));
-        System.out.println(Arrays.stream(solution.allCellsDistOrder(2, 3, 1, 2)).map(Arrays::toString).collect(Collectors.joining(", ")));
+        System.out.println(Arrays.stream(solution.allCellsDistOrder(1, 2, 0, 0)).map(Arrays::toString).collect(Collectors.joining(", ", "[", "]")));
+        System.out.println(Arrays.stream(solution.allCellsDistOrder(2, 2, 0, 1)).map(Arrays::toString).collect(Collectors.joining(", ", "[", "]")));
+        System.out.println(Arrays.stream(solution.allCellsDistOrder(2, 3, 1, 2)).map(Arrays::toString).collect(Collectors.joining(", ", "[", "]")));
     }
 
     /**
