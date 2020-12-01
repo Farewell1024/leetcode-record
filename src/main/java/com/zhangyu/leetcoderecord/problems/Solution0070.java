@@ -14,6 +14,10 @@ public class Solution0070 {
         System.out.println(solution.climbStairs(2));
         System.out.println(solution.climbStairs(3));
         System.out.println(solution.climbStairs(5));
+
+        System.out.println(solution.climbStairs2(2));
+        System.out.println(solution.climbStairs2(3));
+        System.out.println(solution.climbStairs2(5));
     }
 
     public int climbStairs(int n) {
@@ -25,6 +29,18 @@ public class Solution0070 {
             steps[i] = steps[i-1] + steps[i-2];
         }
         return steps[n-1];
+    }
+
+    public int climbStairs2(int n) {
+        if (n == 1 || n == 2) return n;
+        int a = 1, b = 2;
+        for (int i = 2; i < n; i++) {
+            a = a + b;
+            a ^= b;
+            b ^= a;
+            a ^= b;
+        }
+        return b;
     }
 
 }
