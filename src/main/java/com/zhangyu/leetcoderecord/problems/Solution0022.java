@@ -24,16 +24,16 @@ public class Solution0022 {
         return result;
     }
 
-    public void generateParenthesis (List<String> result, String subresult, int left, int right){
+    public void generateParenthesis (List<String> result, String subResult, int left, int right){
         if (left == 0 && right==0){
-            result.add(subresult);
+            result.add(subResult);
             return;
         }
         if (left > 0) {
-            generateParenthesis(result, subresult + "(", left-1, right);
+            generateParenthesis(result, subResult + "(", left-1, right);
         }
         if (right > left) {
-            generateParenthesis(result, subresult+")", left, right-1);
+            generateParenthesis(result, subResult+")", left, right-1);
         }
     }
 }

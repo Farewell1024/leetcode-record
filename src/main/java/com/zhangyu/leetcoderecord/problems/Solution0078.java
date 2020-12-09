@@ -21,12 +21,12 @@ public class Solution0078 {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         helper(result, nums, new ArrayList<>(), 0);
-        return result.stream().distinct().collect(Collectors.toList());
+        return result;
     }
 
     public void helper(List<List<Integer>> result, int[] nums, List<Integer> subResult, int index){
-        result.add(new ArrayList<>(subResult));
         if (index == nums.length){
+            result.add(new ArrayList<>(subResult));
             return;
         }
         //dont check
