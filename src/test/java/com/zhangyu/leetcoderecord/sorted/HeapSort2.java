@@ -22,9 +22,12 @@ public class HeapSort2 {
             return;
         }
         /*
-                       3
+                        3
+                    /      \
                  52         12
-             46     43   6      8
+               /   \       /  \
+             46     43   6     8
+           /   \
           90    7
          */
         int n = arr.length - 1;
