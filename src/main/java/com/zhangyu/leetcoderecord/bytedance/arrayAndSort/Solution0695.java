@@ -57,7 +57,8 @@ public class Solution0695 {
     }
 
     /**
-     *
+     * 手动维护栈 深度优先
+     * 如果改成队列 即为广度优先
      */
     public int maxAreaOfIsland2(int[][] grid) {
         int max = 0;
