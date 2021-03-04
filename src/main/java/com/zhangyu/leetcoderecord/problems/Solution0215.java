@@ -1,4 +1,4 @@
-package com.zhangyu.leetcoderecord.bytedance.arrayAndSort;
+package com.zhangyu.leetcoderecord.problems;
 
 import java.util.Arrays;
 

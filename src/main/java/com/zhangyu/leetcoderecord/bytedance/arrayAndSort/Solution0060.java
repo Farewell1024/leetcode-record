@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class Solution0060 {
 
+    // TODO 学习官方解法
     public static void main(String[] args) {
         Solution0060 solution = new Solution0060();
         System.out.println(solution.getPermutation(3, 3));
