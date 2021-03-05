@@ -2,7 +2,7 @@ package com.zhangyu.leetcoderecord.bytedance.arrayAndSort;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// TODO 学习官方解法
 /**
  * Function: 60. 排列序列
  *
@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class Solution0060 {
 
-    // TODO 学习官方解法
     public static void main(String[] args) {
         Solution0060 solution = new Solution0060();
         System.out.println(solution.getPermutation(3, 3));
