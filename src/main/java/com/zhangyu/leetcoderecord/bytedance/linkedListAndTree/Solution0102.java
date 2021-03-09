@@ -1,4 +1,4 @@
-package com.zhangyu.leetcoderecord.bytedance.arrayAndSort;
+package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
