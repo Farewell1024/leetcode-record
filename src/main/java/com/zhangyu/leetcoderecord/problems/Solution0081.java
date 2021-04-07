@@ -20,7 +20,8 @@ public class Solution0081 {
     /**
      * 二分查找 思路参见33题
      *
-     * 值得注意的是：
+     * 值得注意的是：此题中的数字是会连续的，所有会造成 nums[start] == nums[mid] == nums[end]，如示例3，4
+     * 所以在遇到这种情况的时候，进行start ++， end -- 来忽略这种情况
      */
     public boolean search(int[] nums, int target) {
         int start = 0, end = nums.length - 1;
