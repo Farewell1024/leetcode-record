@@ -1,6 +1,8 @@
 package com.zhangyu.leetcoderecord.problems;
 
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +17,7 @@ public class Solution0515 {
 
     public static void main(String[] args) {
         Solution0515 solution = new Solution0515();
-        TreeNode root = new TreeNode(1,
-                new TreeNode(3, new TreeNode(5), new TreeNode(3)),
-                new TreeNode(2, null, new TreeNode(9)));
+        TreeNode root = TreeNode.buildFromArray(new Integer[]{1, 3, 2, 5, 3, null, 9});
         System.out.println(solution.largestValues(root));
     }
 
@@ -41,25 +41,6 @@ public class Solution0515 {
         }
         helper(root.left, level + 1, result);
         helper(root.right, level + 1, result);
-    }
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 
 }

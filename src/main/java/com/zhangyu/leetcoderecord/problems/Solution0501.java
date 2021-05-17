@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.*;
 
 /**
@@ -12,14 +14,8 @@ import java.util.*;
 public class Solution0501 {
 
     public static void main(String[] args) {
-        TreeNode treeNode1 = new TreeNode(1);
-        TreeNode treeNode2 = new TreeNode(2);
-        TreeNode treeNode3 = new TreeNode(2);
-        treeNode1.right = treeNode2;
-        treeNode2.left = treeNode3;
-
         Solution0501 solution = new Solution0501();
-        System.out.println(Arrays.toString(solution.findMode(treeNode1)));
+        System.out.println(Arrays.toString(solution.findMode(TreeNode.buildFromArray(new Integer[]{1, null, 2, 2}))));
     }
 
     public int[] findMode(TreeNode root) {
@@ -40,23 +36,13 @@ public class Solution0501 {
         return result.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public void helper(TreeNode root, Map<Integer, Integer> timeMap){
+    public void helper(TreeNode root, Map<Integer, Integer> timeMap) {
         if (root == null) {
             return;
         }
         helper(root.left, timeMap);
         timeMap.put(root.val, timeMap.getOrDefault(root.val, 0) + 1);
         helper(root.right, timeMap);
-    }
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
     }
 
 }

@@ -1,8 +1,6 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import lombok.Data;
-
-import javax.swing.tree.TreeNode;
+import com.zhangyu.leetcoderecord.utils.TreeNode;
 
 /**
  * Function: 235. 二叉搜索树的最近公共祖先
@@ -51,14 +49,4 @@ public class Solution0235 {
         return root;
     }
 
-    @Data
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

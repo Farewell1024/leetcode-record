@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 /**
  * Function: 783. 二叉搜索树节点最小距离
  *
@@ -11,12 +13,9 @@ public class Solution0783 {
 
     public static void main(String[] args) {
         Solution0783 solution = new Solution0783();
-        System.out.println(solution.minDiffInBST(new TreeNode(4,
-                new TreeNode(2, new TreeNode(1), new TreeNode(3)),
-                new TreeNode(6))));
-        System.out.println(solution.minDiffInBST(new TreeNode(1,
-                new TreeNode(0),
-                new TreeNode(48, new TreeNode(12), new TreeNode(49)))));
+        System.out.println(solution.minDiffInBST(TreeNode.buildFromArray(new Integer[]{4, 2, 6, 1, 3})));
+        System.out.println(solution.minDiffInBST(TreeNode.buildFromArray(new Integer[]{1, 0, 48, null, null, 12, 49})));
+
     }
 
     int ans = Integer.MAX_VALUE, pre = -1;
@@ -43,22 +42,4 @@ public class Solution0783 {
         helper(treeNode.right);
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 }

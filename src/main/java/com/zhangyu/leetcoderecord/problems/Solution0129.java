@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.Stack;
 
 /**
@@ -12,19 +14,9 @@ import java.util.Stack;
 public class Solution0129 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(4);
-        TreeNode left = new TreeNode(9);
-        TreeNode right = new TreeNode(0);
-        TreeNode leftLeft = new TreeNode(5);
-        TreeNode leftRight = new TreeNode(1);
-        root.left = left;
-        root.right = right;
-        left.left = leftLeft;
-        left.right = leftRight;
-
         Solution0129 solution = new Solution0129();
-//        System.out.println(solution.sumNumbers(root));
-        System.out.println(solution.sumNumbers2(root));
+        System.out.println(solution.sumNumbers2(TreeNode.buildFromArray(new Integer[]{1, 2, 3})));
+        System.out.println(solution.sumNumbers2(TreeNode.buildFromArray(new Integer[]{4, 9, 0, 5, 1})));
     }
 
     /**
@@ -38,18 +30,18 @@ public class Solution0129 {
         }
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
-        while (! stack.isEmpty()){
+        while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             if (node.left == null && node.right == null) {
                 result += node.val;
                 continue;
             }
             if (node.left != null) {
-                node.left.val += (node.val * 10 );
+                node.left.val += (node.val * 10);
                 stack.push(node.left);
             }
             if (node.right != null) {
-                node.right.val += (node.val * 10 );
+                node.right.val += (node.val * 10);
                 stack.push(node.right);
             }
         }
@@ -63,20 +55,12 @@ public class Solution0129 {
         return helper(root, 0);
     }
 
-    public int helper(TreeNode root, int preSum){
-        if (root == null){ return 0; }
-        int sum = preSum * 10 + root.val;
-        return root.left==null && root.right==null ? sum : (helper(root.left, sum) + helper(root.right, sum));
-    }
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
+    public int helper(TreeNode root, int preSum) {
+        if (root == null) {
+            return 0;
         }
+        int sum = preSum * 10 + root.val;
+        return root.left == null && root.right == null ? sum : (helper(root.left, sum) + helper(root.right, sum));
     }
 
 }

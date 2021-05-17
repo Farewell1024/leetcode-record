@@ -1,6 +1,7 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
 
 /**
  * Function: 236. 二叉树的最近公共祖先
@@ -46,13 +47,4 @@ public class Solution0236 {
         return left == null ? right : right == null ? left : root;
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

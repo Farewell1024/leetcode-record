@@ -1,6 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import javax.swing.tree.TreeNode;
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +15,12 @@ import java.util.List;
 public class Solution0094 {
 
     public static void main(String[] args) {
-        TreeNode head = new TreeNode(1);
-        TreeNode treeNode2 = new TreeNode(2);
-        TreeNode treeNode3 = new TreeNode(3);
-        head.right = treeNode2;
-        treeNode2.left = treeNode3;
-
         Solution0094 solution = new Solution0094();
-        System.out.println(solution.inorderTraversal(head));
+        System.out.println(solution.inorderTraversal(TreeNode.buildFromArray(new Integer[]{1, null, 2, 3})));
+        System.out.println(solution.inorderTraversal(TreeNode.buildFromArray(new Integer[]{})));
+        System.out.println(solution.inorderTraversal(TreeNode.buildFromArray(new Integer[]{1})));
+        System.out.println(solution.inorderTraversal(TreeNode.buildFromArray(new Integer[]{1, 2})));
+        System.out.println(solution.inorderTraversal(TreeNode.buildFromArray(new Integer[]{1, null, 2})));
     }
 
     /**
@@ -51,13 +50,4 @@ public class Solution0094 {
         return result;
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

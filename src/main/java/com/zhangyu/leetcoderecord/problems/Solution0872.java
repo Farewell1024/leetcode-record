@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,21 +17,21 @@ public class Solution0872 {
     public static void main(String[] args) {
         Solution0872 solution = new Solution0872();
         System.out.println(solution.leafSimilar(
-                new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4))), new TreeNode(1, new TreeNode(9), new TreeNode(8))),
-                new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(7)), new TreeNode(1, new TreeNode(4), new TreeNode(2, new TreeNode(9), new TreeNode(8))))
+                TreeNode.buildFromArray(new Integer[]{3, 5, 1, 6, 2, 9, 8, null, null, 7, 4}),
+                TreeNode.buildFromArray(new Integer[]{3, 5, 1, 6, 7, 4, 2, null, null, null, null, null, null, 9, 8})
         ));
-        System.out.println(solution.leafSimilar(new TreeNode(1), new TreeNode(1)));
-        System.out.println(solution.leafSimilar(new TreeNode(1), new TreeNode(2)));
-        System.out.println(solution.leafSimilar(new TreeNode(1, new TreeNode(2), null), new TreeNode(2, new TreeNode(2), null)));
+        System.out.println(solution.leafSimilar(TreeNode.buildFromArray(new Integer[]{1}), TreeNode.buildFromArray(new Integer[]{1})));
+        System.out.println(solution.leafSimilar(TreeNode.buildFromArray(new Integer[]{1}), TreeNode.buildFromArray(new Integer[]{2})));
+        System.out.println(solution.leafSimilar(TreeNode.buildFromArray(new Integer[]{1, 2}), TreeNode.buildFromArray(new Integer[]{2, 2})));
         System.out.println(solution.leafSimilar(
-                new TreeNode(1, new TreeNode(2), new TreeNode(3)),
-                new TreeNode(1, new TreeNode(3), new TreeNode(2))
+                TreeNode.buildFromArray(new Integer[]{1, 2, 3}),
+                TreeNode.buildFromArray(new Integer[]{1, 3, 2})
         ));
     }
 
     /**
      * 中序遍历 分别获取两个二叉树的叶子结点，再进行比较
-     *
+     * <p>
      * Tips ： AbstractList类中重写了equals方法，可以直接进行比较
      */
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
@@ -55,26 +57,6 @@ public class Solution0872 {
             result.add(treeNode.val);
         }
         helper(treeNode.right, result);
-    }
-
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 
 }

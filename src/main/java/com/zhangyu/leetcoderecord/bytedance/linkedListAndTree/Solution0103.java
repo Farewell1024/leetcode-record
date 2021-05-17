@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.*;
 
 /**
@@ -13,9 +15,7 @@ public class Solution0103 {
 
     public static void main(String[] args) {
         Solution0103 solution = new Solution0103();
-        System.out.println(solution.zigzagLevelOrder(new TreeNode(3,
-                new TreeNode(9),
-                new TreeNode(20, new TreeNode(15), new TreeNode(7)))));
+        System.out.println(solution.zigzagLevelOrder(TreeNode.buildFromArray(new Integer[]{3,9,20,null,null,15,7})));
     }
 
     /**
@@ -48,23 +48,4 @@ public class Solution0103 {
         return result;
     }
 
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 }

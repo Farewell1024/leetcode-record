@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 /**
  * Function: 226. 翻转二叉树
  *
@@ -10,22 +12,8 @@ package com.zhangyu.leetcoderecord.problems;
 public class Solution0226 {
 
     public static void main(String[] args) {
-        TreeNode head = new TreeNode(4);
-        TreeNode left = new TreeNode(2);
-        TreeNode right = new TreeNode(7);
-        TreeNode leftLeft = new TreeNode(1);
-        TreeNode leftRight = new TreeNode(3);
-        TreeNode rightLeft = new TreeNode(6);
-        TreeNode rightRight = new TreeNode(9);
-        head.left = left;
-        head.right = right;
-        left.left = leftLeft;
-        left.right = leftRight;
-        right.left = rightLeft;
-        right.right = rightRight;
-
         Solution0226 solution = new Solution0226();
-        TreeNode invertTree = solution.invertTree(head);
+        TreeNode invertTree = solution.invertTree(TreeNode.buildFromArray(new Integer[]{4, 2, 7, 1, 3, 6, 9}));
         System.out.println("Test Finished !");
     }
 
@@ -45,13 +33,4 @@ public class Solution0226 {
         helper(node.right);
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

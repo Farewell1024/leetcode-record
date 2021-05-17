@@ -1,6 +1,6 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import javax.swing.tree.TreeNode;
+import com.zhangyu.leetcoderecord.utils.TreeNode;
 
 /**
  * Function: 404. 左叶子之和
@@ -12,18 +12,8 @@ import javax.swing.tree.TreeNode;
 public class Solution0404 {
 
     public static void main(String[] args) {
-        TreeNode head = new TreeNode(3);
-        TreeNode left = new TreeNode(9);
-        TreeNode right = new TreeNode(20);
-        TreeNode rightLeft = new TreeNode(15);
-        TreeNode rightRight = new TreeNode(7);
-        head.left = left;
-        head.right = right;
-        right.left = rightLeft;
-        right.right = rightRight;
-
         Solution0404 solution = new Solution0404();
-        System.out.println(solution.sumOfLeftLeaves(head));
+        System.out.println(solution.sumOfLeftLeaves(TreeNode.buildFromArray(new Integer[]{3, 9, 20, null, null, 15, 7})));
     }
 
     public int sumOfLeftLeaves(TreeNode root) {
@@ -42,13 +32,4 @@ public class Solution0404 {
         if (node.right != null) helper(node.right, false);
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

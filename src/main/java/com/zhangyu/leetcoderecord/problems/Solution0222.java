@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 /**
  * Function: 222. 完全二叉树的节点个数
  *
@@ -10,22 +12,9 @@ package com.zhangyu.leetcoderecord.problems;
 public class Solution0222 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        TreeNode treeNode1 = new TreeNode(2);
-        TreeNode treeNode2 = new TreeNode(3);
-        TreeNode treeNode3 = new TreeNode(4);
-        TreeNode treeNode4 = new TreeNode(5);
-        TreeNode treeNode5 = new TreeNode(6);
-        root.left = treeNode1;
-        root.right = treeNode2;
-        treeNode1.left = treeNode3;
-        treeNode1.right = treeNode4;
-        treeNode2.left = treeNode5;
-
         Solution0222 solution = new Solution0222();
-        System.out.println(solution.countNodes(root));
-        System.out.println(solution.countNodes2(root));
-
+        System.out.println(solution.countNodes(TreeNode.buildFromArray(new Integer[]{1,2,3,4,5,6})));
+        System.out.println(solution.countNodes2(TreeNode.buildFromArray(new Integer[]{1,2,3,4,5,6})));
     }
 
     /**
@@ -85,13 +74,4 @@ public class Solution0222 {
         }
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

@@ -1,6 +1,6 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import javax.swing.tree.TreeNode;
+import com.zhangyu.leetcoderecord.utils.TreeNode;
 
 /**
  * Function: 530. 二叉搜索树的最小绝对差
@@ -12,14 +12,8 @@ import javax.swing.tree.TreeNode;
 public class Solution0530 {
 
     public static void main(String[] args) {
-        TreeNode treeNode1 = new TreeNode(1);
-        TreeNode treeNode2 = new TreeNode(3);
-        TreeNode treeNode3 = new TreeNode(2);
-        treeNode1.right = treeNode2;
-        treeNode2.left = treeNode3;
-
         Solution0530 solution = new Solution0530();
-        System.out.println(solution.getMinimumDifference(treeNode1));
+        System.out.println(solution.getMinimumDifference(TreeNode.buildFromArray(new Integer[]{1,null,3,null,null,2})));
     }
 
     public int getMinimumDifference(TreeNode root) {
@@ -42,13 +36,4 @@ public class Solution0530 {
         helper(root.right);
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

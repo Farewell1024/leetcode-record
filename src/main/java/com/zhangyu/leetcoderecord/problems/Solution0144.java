@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,13 +15,8 @@ import java.util.List;
 public class Solution0144 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1,
-                new TreeNode(2, new TreeNode(4), new TreeNode(5)),
-                new TreeNode(3, new TreeNode(6), new TreeNode(7)));
-
-
         Solution0144 solution = new Solution0144();
-        System.out.println(solution.preorderTraversal(root));
+        System.out.println(solution.preorderTraversal(TreeNode.buildFromArray(new Integer[]{1,null,2,3})));
     }
 
     /**
@@ -48,22 +45,4 @@ public class Solution0144 {
         return result;
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 }

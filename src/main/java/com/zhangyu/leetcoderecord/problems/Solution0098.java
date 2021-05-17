@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.TreeNode;
+
 /**
  * Function: 98. 验证二叉搜索树
  *
@@ -10,14 +12,8 @@ package com.zhangyu.leetcoderecord.problems;
 public class Solution0098 {
 
     public static void main(String[] args) {
-        TreeNode head = new TreeNode(2);
-        TreeNode left = new TreeNode(1);
-        TreeNode right = new TreeNode(3);
-        head.left = left;
-        head.right = right;
-
         Solution0098 solution = new Solution0098();
-        System.out.println(solution.isValidBST(head));
+        System.out.println(solution.isValidBST(TreeNode.buildFromArray(new Integer[]{2,1,3})));
     }
 
     public boolean isValidBST(TreeNode root) {
@@ -33,13 +29,4 @@ public class Solution0098 {
         return isValidBST(root.left, root.val, min) && isValidBST(root.right, max, root.val);
     }
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

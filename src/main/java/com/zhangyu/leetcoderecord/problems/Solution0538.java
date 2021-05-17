@@ -1,6 +1,6 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import javax.swing.tree.TreeNode;
+import com.zhangyu.leetcoderecord.utils.TreeNode;
 
 /**
  * Function: 538. 把二叉搜索树转换为累加树
@@ -12,26 +12,8 @@ import javax.swing.tree.TreeNode;
 public class Solution0538 {
 
     public static void main(String[] args) {
-        TreeNode head = new TreeNode(4);
-        TreeNode left = new TreeNode(1);
-        TreeNode right = new TreeNode(6);
-        TreeNode leftLeft = new TreeNode(0);
-        TreeNode leftRight = new TreeNode(2);
-        TreeNode rightLeft = new TreeNode(5);
-        TreeNode rightRight = new TreeNode(7);
-        TreeNode leftRightRight = new TreeNode(3);
-        TreeNode rightRightRight = new TreeNode(8);
-        head.left = left;
-        head.right = right;
-        left.left = leftLeft;
-        left.right = leftRight;
-        right.left = rightLeft;
-        right.right = rightRight;
-        leftRight.right = leftRightRight;
-        rightRight.right = rightRightRight;
-
         Solution0538 solution = new Solution0538();
-        TreeNode result = solution.convertBST(head);
+        TreeNode result = solution.convertBST(TreeNode.buildFromArray(new Integer[]{4, 1, 6, 0, 2, 5, 7, null, null, null, 3, null, null, null, 8}));
         System.out.println("Test Finished !");
     }
 
@@ -47,13 +29,4 @@ public class Solution0538 {
 
     private int sum = 0;
 
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }
