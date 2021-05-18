@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,17 +15,10 @@ import java.util.Set;
 public class Solution0142 {
 
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(3);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(0);
-        ListNode listNode4 = new ListNode(-4);
-
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode2;
-
         Solution0142 solution = new Solution0142();
+        System.out.println(solution.detectCycle(ListNode.buildFromArray(new int[]{3, 2, 0, -4})));
+        System.out.println(solution.detectCycle(ListNode.buildFromArray(new int[]{1, 2})));
+        System.out.println(solution.detectCycle(new ListNode(1)));
     }
 
     /**
@@ -80,12 +75,6 @@ public class Solution0142 {
             i1 = i1.next;
         }
         return h1;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
     }
 
 }

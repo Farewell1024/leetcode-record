@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 /**
  * Function: 2. 两数相加
  *
@@ -10,16 +12,16 @@ package com.zhangyu.leetcoderecord.problems;
 public class Solution0002 {
 
     public static void main(String[] args) {
-        ListNode first = new ListNode(2, new ListNode(4, new ListNode(3, null)));
-        ListNode second = new ListNode(5, new ListNode(6, new ListNode(4, null)));
-
-        Solution0002 Solution = new Solution0002();
-        ListNode listNode = Solution.addTwoNumbers(first, second);
-        while (listNode != null) {
-            System.out.print(listNode.val);
-            listNode = listNode.next;
-        }
-        System.out.println();
+        Solution0002 solution = new Solution0002();
+        ListNode.print(solution.addTwoNumbers(
+                ListNode.buildFromArray(new int[]{2, 4, 3}),
+                ListNode.buildFromArray(new int[]{5, 6, 4})
+        ));
+        ListNode.print(solution.addTwoNumbers(new ListNode(0), new ListNode(0)));
+        ListNode.print(solution.addTwoNumbers(
+                ListNode.buildFromArray(new int[]{9, 9, 9, 9, 9, 9, 9}),
+                ListNode.buildFromArray(new int[]{9, 9, 9, 9})
+        ));
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -46,23 +48,6 @@ public class Solution0002 {
             tmpNode.next = new ListNode(carry);
         }
         return head.next;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 
 }

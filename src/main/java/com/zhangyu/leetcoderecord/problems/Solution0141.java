@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,19 +15,9 @@ import java.util.Set;
 public class Solution0141 {
 
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(3);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(0);
-        ListNode listNode4 = new ListNode(-4);
-
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode2;
-
         Solution0141 solution = new Solution0141();
-        System.out.println(solution.hasCycle(listNode1));
-        System.out.println(solution.hasCycle2(listNode1));
+        System.out.println(solution.hasCycle(ListNode.buildFromArray(new int[]{3, 2, 0, -4})));
+        System.out.println(solution.hasCycle2(ListNode.buildFromArray(new int[]{3, 2, 0, -4})));
     }
 
     /**
@@ -53,24 +45,18 @@ public class Solution0141 {
         }
         ListNode slow = head.next;
         ListNode quick = head.next.next;
-        while (slow != null && quick != null){
+        while (slow != null && quick != null) {
             if (slow == quick) {
                 return true;
             }
             slow = slow.next;
             quick = quick.next;
-            if (quick == null){
+            if (quick == null) {
                 return false;
             }
             quick = quick.next;
         }
         return false;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
     }
 
 }

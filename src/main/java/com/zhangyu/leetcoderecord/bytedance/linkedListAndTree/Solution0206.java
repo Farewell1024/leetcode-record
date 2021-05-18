@@ -1,5 +1,10 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
+import static com.zhangyu.leetcoderecord.utils.ListNode.buildFromArray;
+import static com.zhangyu.leetcoderecord.utils.ListNode.print;
+
 /**
  * Function: 206. 反转链表
  *
@@ -11,22 +16,12 @@ public class Solution0206 {
 
     public static void main(String[] args) {
         Solution0206 solution = new Solution0206();
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        node4.next = node5;
-
-        print(solution.reverseList(node1));
+        print(solution.reverseList(buildFromArray(new int[]{1, 2, 3, 4, 5})));
     }
 
     /**
      * 递归
-     *
+     * <p>
      * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
      * 内存消耗：38.3 MB, 在所有 Java 提交中击败了41.19%的用户
      */
@@ -42,7 +37,7 @@ public class Solution0206 {
 
     /**
      * 迭代
-     *
+     * <p>
      * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
      * 内存消耗：38.3 MB, 在所有 Java 提交中击败了43.37%的用户
      */
@@ -57,21 +52,4 @@ public class Solution0206 {
         return pre;
     }
 
-    private static void print(ListNode listNode) {
-        ListNode tmp = listNode;
-        while (tmp != null) {
-            System.out.print(tmp.val + "\t");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

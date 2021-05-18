@@ -1,6 +1,8 @@
 package com.zhangyu.leetcoderecord.problems;
 
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -14,14 +16,8 @@ import java.util.LinkedList;
 public class Solution0143 {
 
     public static void main(String[] args) {
-        ListNode listNode5 = new ListNode(5);
-        ListNode listNode4 = new ListNode(4, listNode5);
-        ListNode listNode3 = new ListNode(3, listNode4);
-        ListNode listNode2 = new ListNode(2, listNode3);
-        ListNode head = new ListNode(1, listNode2);
         Solution0143 solution = new Solution0143();
-        solution.reorderList(head);
-        System.out.println("Test Finished !");
+        solution.reorderList(ListNode.buildFromArray(new int[]{1, 2, 3, 4, 5}));
     }
 
     /**
@@ -38,7 +34,7 @@ public class Solution0143 {
         }
         tmpNode = head;
         while (!deque.isEmpty()) {
-            if (isHead){
+            if (isHead) {
                 tmpNode.next = deque.remove();
                 isHead = false;
             } else {
@@ -50,21 +46,4 @@ public class Solution0143 {
         tmpNode.next = null;
     }
 
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

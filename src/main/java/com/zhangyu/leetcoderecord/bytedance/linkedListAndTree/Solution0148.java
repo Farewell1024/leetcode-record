@@ -1,5 +1,9 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
+import static com.zhangyu.leetcoderecord.utils.ListNode.print;
+
 /**
  * Function: 148. 排序链表
  *
@@ -17,9 +21,6 @@ public class Solution0148 {
         print(solution.sortList(head1));
         print(solution.sortList(head2));
         print(solution.sortList(head3));
-
-//        print(solution.merge(new ListNode(1, new ListNode(4, new ListNode(5))),
-//                new ListNode(2, new ListNode(3))));
     }
 
     /**
@@ -76,32 +77,4 @@ public class Solution0148 {
         return tmp.next;
     }
 
-    /**
-     * 打印链表
-     */
-    private static void print(ListNode listNode) {
-        ListNode tmp = listNode;
-        while (tmp != null) {
-            System.out.print(tmp.val + "\t");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

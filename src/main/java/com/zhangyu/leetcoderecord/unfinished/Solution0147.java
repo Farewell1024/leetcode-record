@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.unfinished;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 /**
  * Function: 147. 对链表进行插入排序
  *
@@ -20,11 +22,7 @@ public class Solution0147 {
 
         Solution0147 solution = new Solution0147();
         ListNode node = solution.insertionSortList(node1);
-        while (node != null) {
-            System.out.print(node.val + "\t");
-            node = node.next;
-        }
-        System.out.println();
+
     }
 
     public ListNode insertionSortList(ListNode head) {
@@ -35,15 +33,6 @@ public class Solution0147 {
         tmpNode.next = head;
 
         return head;
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 
 }

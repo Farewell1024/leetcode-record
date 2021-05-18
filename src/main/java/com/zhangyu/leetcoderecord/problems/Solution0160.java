@@ -1,6 +1,6 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import lombok.ToString;
+import com.zhangyu.leetcoderecord.utils.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,23 +16,14 @@ public class Solution0160 {
 
     public static void main(String[] args) {
         Solution0160 solution = new Solution0160();
-
-        ListNode h1 = new ListNode(4);
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(8);
-        ListNode n3 = new ListNode(4);
-        ListNode n4 = new ListNode(5);
-        ListNode h2 = new ListNode(5);
-        ListNode n5 = new ListNode(0);
-        ListNode n6 = new ListNode(1);
-        h1.next = n1;
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        h2.next = n5;
-        n5.next = n6;
-        n6.next = n2;
-        System.out.println(solution.getIntersectionNode(h1, h2));
+        System.out.println(solution.getIntersectionNode(
+                ListNode.buildFromArray(new int[]{4, 1, 8, 4, 5}),
+                ListNode.buildFromArray(new int[]{5, 0, 1, 8, 4, 5})
+        ));
+        System.out.println(solution.getIntersectionNode(
+                ListNode.buildFromArray(new int[]{2, 5, 4}),
+                ListNode.buildFromArray(new int[]{1, 5})
+        ));
     }
 
     /**
@@ -72,14 +63,4 @@ public class Solution0160 {
         return n1;
     }
 
-    @ToString(exclude = "next")
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }

@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 /**
  * Function: 328. 奇偶链表
  *
@@ -10,17 +12,8 @@ package com.zhangyu.leetcoderecord.problems;
 public class Solution0328 {
 
     public static void main(String[] args) {
-        ListNode root = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5)))));
         Solution0328 solution = new Solution0328();
-        ListNode listNode = solution.oddEvenList(root);
-        while (listNode != null){
-            System.out.println(listNode.val);
-            listNode = listNode.next;
-        }
+        ListNode.print(solution.oddEvenList(ListNode.buildFromArray(new int[]{1, 2, 3, 4, 5})));
     }
 
     /**
@@ -47,20 +40,4 @@ public class Solution0328 {
         return oddHead.next;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

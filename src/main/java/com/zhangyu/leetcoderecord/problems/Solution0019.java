@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.problems;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,19 +15,8 @@ import java.util.Map;
 public class Solution0019 {
 
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(4);
-        ListNode listNode5 = new ListNode(5);
-        listNode1.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode5;
-
         Solution0019 solution = new Solution0019();
-        ListNode result = solution.removeNthFromEnd(listNode1, 2);
-        System.out.println("Test Finished !");
+        ListNode.print(solution.removeNthFromEnd(ListNode.buildFromArray(new int[]{1,2,3,4,5}), 2));
     }
 
     /**
@@ -68,9 +59,4 @@ public class Solution0019 {
         return prev.next;
     }
 
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
 }

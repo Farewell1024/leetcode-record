@@ -1,6 +1,8 @@
 package com.zhangyu.leetcoderecord.problems;
 
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 /**
  * Function: 21. 合并两个有序链表
  *
@@ -12,12 +14,12 @@ public class Solution0021 {
 
     public static void main(String[] args) {
         Solution0021 solution = new Solution0021();
-        print(solution.mergeTwoLists(
-                new ListNode(1, new ListNode(2, new ListNode(4))),
-                new ListNode(1, new ListNode(3, new ListNode(4)))
+        ListNode.print(solution.mergeTwoLists(
+                ListNode.buildFromArray(new int[]{1, 2, 4}),
+                ListNode.buildFromArray(new int[]{1, 3, 4})
         ));
-        print(solution.mergeTwoLists(null, null));
-        print(solution.mergeTwoLists(null, new ListNode(1)));
+        ListNode.print(solution.mergeTwoLists(null, null));
+        ListNode.print(solution.mergeTwoLists(null, new ListNode(1)));
     }
 
     /**
@@ -57,32 +59,6 @@ public class Solution0021 {
         } else {
             l1.next = mergeTwoLists(l2, l1.next);
             return l1;
-        }
-    }
-
-    private static void print(ListNode listNode) {
-        ListNode tmp = listNode;
-        while (tmp != null) {
-            System.out.print(tmp.val + "\t");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 /**
  * Function: 21. 合并两个有序链表
  *
@@ -12,17 +14,17 @@ public class Solution0021 {
 
     public static void main(String[] args) {
         Solution0021 solution = new Solution0021();
-        print(solution.mergeTwoLists(
-                new ListNode(1, new ListNode(2, new ListNode(4))),
-                new ListNode(1, new ListNode(3, new ListNode(4)))
+        ListNode.print(solution.mergeTwoLists(
+                ListNode.buildFromArray(new int[]{1, 2, 4}),
+                ListNode.buildFromArray(new int[]{1, 3, 4})
         ));
-        print(solution.mergeTwoLists(null, null));
-        print(solution.mergeTwoLists(null, new ListNode(1)));
+        ListNode.print(solution.mergeTwoLists(null, null));
+        ListNode.print(solution.mergeTwoLists(null, new ListNode(1)));
     }
 
     /**
      * 官方解法2：迭代
-     *
+     * <p>
      * 执行用时：1 ms, 在所有 Java 提交中击败了25.06%的用户
      * 内存消耗：38.1 MB, 在所有 Java 提交中击败了9.17%的用户
      */
@@ -44,7 +46,7 @@ public class Solution0021 {
 
     /**
      * 递归
-     *
+     * <p>
      * 执行用时：1 ms, 在所有 Java 提交中击败了25.06%的用户
      * 内存消耗：37.9 MB, 在所有 Java 提交中击败了46.38%的用户
      */
@@ -60,29 +62,4 @@ public class Solution0021 {
         }
     }
 
-    private static void print(ListNode listNode) {
-        ListNode tmp = listNode;
-        while (tmp != null) {
-            System.out.print(tmp.val + "\t");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

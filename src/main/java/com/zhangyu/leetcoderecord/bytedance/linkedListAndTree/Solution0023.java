@@ -1,6 +1,8 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
-import lombok.ToString;
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
+import static com.zhangyu.leetcoderecord.utils.ListNode.print;
 
 /**
  * Function: 23. 合并K个升序链表
@@ -14,9 +16,9 @@ public class Solution0023 {
     public static void main(String[] args) {
         Solution0023 solution = new Solution0023();
         print(solution.mergeKLists(new ListNode[]{
-                new ListNode(1, new ListNode(4, new ListNode(5))),
-                new ListNode(1, new ListNode(3, new ListNode(4))),
-                new ListNode(2, new ListNode(6))
+                ListNode.buildFromArray(new int[]{1, 4, 5}),
+                ListNode.buildFromArray(new int[]{1, 3, 4}),
+                ListNode.buildFromArray(new int[]{2, 6})
         }));
         print(solution.mergeKLists(new ListNode[0]));
         print(solution.mergeKLists(new ListNode[]{null}));
@@ -25,7 +27,6 @@ public class Solution0023 {
 
     /**
      * 分治 将每两个链表合成一个
-     *
      */
     public ListNode mergeKLists(ListNode[] lists) {
         return mergeKLists(lists, 0, lists.length - 1);
@@ -54,30 +55,4 @@ public class Solution0023 {
         }
     }
 
-    private static void print(ListNode listNode) {
-        ListNode tmp = listNode;
-        while (tmp != null) {
-            System.out.print(tmp.val + "\t");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
-    @ToString(exclude = "next")
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }

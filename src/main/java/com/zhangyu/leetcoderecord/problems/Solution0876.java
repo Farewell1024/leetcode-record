@@ -1,12 +1,12 @@
 package com.zhangyu.leetcoderecord.problems;
 
-import java.util.List;
+import com.zhangyu.leetcoderecord.utils.ListNode;
 
 /**
  * Function: 876. 链表的中间结点
- *
+ * <p>
  * 本例中只写了快慢指针的办法，在官方解法中还有 1。数组存储； 2。单指针 两种解法。
- *
+ * <p>
  * 不如快慢指针爽
  *
  * @author zhangyu
@@ -16,21 +16,8 @@ import java.util.List;
 public class Solution0876 {
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        ListNode listNode2 = new ListNode(2);
-        ListNode listNode3 = new ListNode(3);
-        ListNode listNode4 = new ListNode(4);
-        ListNode listNode5 = new ListNode(5);
-        ListNode listNode6 = new ListNode(6);
-
-        head.next = listNode2;
-        listNode2.next = listNode3;
-        listNode3.next = listNode4;
-        listNode4.next = listNode5;
-//        listNode5.next = listNode6;
-
         Solution0876 solution = new Solution0876();
-        ListNode result = solution.middleNode(head);
+        ListNode result = solution.middleNode(ListNode.buildFromArray(new int[]{1, 2, 3, 4, 5, 6}));
         System.out.println(result.val);
     }
 
@@ -40,20 +27,11 @@ public class Solution0876 {
     public ListNode middleNode(ListNode head) {
         if (head == null) return head;
         ListNode slow = head, quick = head;
-        while (quick != null && quick.next != null){
+        while (quick != null && quick.next != null) {
             slow = slow.next;
             quick = quick.next.next;
         }
         return slow;
     }
 
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

@@ -1,5 +1,7 @@
 package com.zhangyu.leetcoderecord.bytedance.linkedListAndTree;
 
+import com.zhangyu.leetcoderecord.utils.ListNode;
+
 /**
  * Function: 2. 两数相加
  *
@@ -11,15 +13,14 @@ public class Solution0002 {
 
     public static void main(String[] args) {
         Solution0002 solution = new Solution0002();
-        print(solution.addTwoNumbers(
-                new ListNode(2, new ListNode(4, new ListNode(3))),
-                new ListNode(5, new ListNode(6, new ListNode(4)))
+        ListNode.print(solution.addTwoNumbers(
+                ListNode.buildFromArray(new int[]{2, 4, 3}),
+                ListNode.buildFromArray(new int[]{5, 6, 4})
         ));
-        print(solution.addTwoNumbers(new ListNode(0), new ListNode(0)));
-        print(solution.addTwoNumbers(
-                new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9,
-                        new ListNode(9))))))),
-                new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))
+        ListNode.print(solution.addTwoNumbers(new ListNode(0), new ListNode(0)));
+        ListNode.print(solution.addTwoNumbers(
+                ListNode.buildFromArray(new int[]{9, 9, 9, 9, 9, 9, 9}),
+                ListNode.buildFromArray(new int[]{9, 9, 9, 9})
         ));
     }
 
@@ -35,36 +36,11 @@ public class Solution0002 {
             a = b / 10;
             tmp.next = new ListNode(b % 10);
             if (l1 != null) l1 = l1.next;
-            if (l2 != null)l2 = l2.next;
+            if (l2 != null) l2 = l2.next;
             tmp = tmp.next;
         }
         if (a != 0) tmp.next = new ListNode(a);
         return result.next;
     }
 
-    private static void print(ListNode listNode) {
-        ListNode tmp = listNode;
-        while (tmp != null) {
-            System.out.print(tmp.val + "\t");
-            tmp = tmp.next;
-        }
-        System.out.println();
-    }
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 }
