@@ -25,12 +25,12 @@ public class ListNode {
     }
 
     public static ListNode buildFromArray(int[] arr) {
-        ListNode head = new ListNode(arr[0]), tmp = head;
-        for (int i = 1; i < arr.length; i++) {
+        ListNode head = new ListNode(-1), tmp = head;
+        for (int i = 0; i < arr.length; i++) {
             tmp.next = new ListNode(arr[i]);
             tmp = tmp.next;
         }
-        return head;
+        return head.next;
     }
 
     public static void print(ListNode listNode) {
