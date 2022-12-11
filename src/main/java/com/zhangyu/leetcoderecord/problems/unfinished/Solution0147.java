@@ -1,4 +1,4 @@
-package com.zhangyu.leetcoderecord.unfinished;
+package com.zhangyu.leetcoderecord.problems.unfinished;
 
 import com.zhangyu.leetcoderecord.utils.ListNode;
 

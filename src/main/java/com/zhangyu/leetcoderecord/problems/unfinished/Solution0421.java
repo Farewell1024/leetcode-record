@@ -1,4 +1,4 @@
-package com.zhangyu.leetcoderecord.unfinished;
+package com.zhangyu.leetcoderecord.problems.unfinished;
 
 /**
  * Function: 421. 数组中两个数的最大异或值

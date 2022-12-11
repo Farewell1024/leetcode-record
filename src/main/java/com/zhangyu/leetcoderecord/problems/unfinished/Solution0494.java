@@ -1,4 +1,4 @@
-package com.zhangyu.leetcoderecord.unfinished;
+package com.zhangyu.leetcoderecord.problems.unfinished;
 
 /**
  * Function:
